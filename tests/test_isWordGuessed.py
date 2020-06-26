@@ -1,13 +1,11 @@
 from scripts.isWordGuessed import isWordGuessed
 
 
-def test_word_is_guessed_False():
+def test_word_is_guessed():
     secretWord = 'apple'
     lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
     assert isWordGuessed(secretWord, lettersGuessed) == False
 
-
-def test_word_is_guessed_True():
-    secretWord = 'eikprs'
+    secretWord = 'prseik'
     lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
     assert isWordGuessed(secretWord, lettersGuessed) == True
