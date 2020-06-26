@@ -55,8 +55,8 @@ def isWordGuessed(secretWord, lettersGuessed):
       False otherwise
     '''
     correct = 0
-    for i in lettersGuessed:
-        if i in secretWord:
+    for i in secretWord:
+        if i in lettersGuessed:
             correct = 0
         else:
             correct = 1
@@ -74,7 +74,14 @@ def getGuessedWord(secretWord, lettersGuessed):
     returns: string, comprised of letters and underscores that represents
       what letters in secretWord have been guessed so far.
     '''
-    # FILL IN YOUR CODE HERE...
+    guessedSoFar = []
+    for i in secretWord:
+        if i in lettersGuessed:
+            guessedSoFar.append(i)
+        else:
+            guessedSoFar.append('_')
+    separator = ' '
+    return separator.join(guessedSoFar)
 
 
 def getAvailableLetters(lettersGuessed):
