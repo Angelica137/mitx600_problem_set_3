@@ -9,8 +9,8 @@ def isWordGuessed(secretWord, lettersGuessed):
       False otherwise
     '''
     correct = 0
-    for i in lettersGuessed:
-        if i in secretWord:
+    for i in secretWord:
+        if i in lettersGuessed:
             correct = 0
         else:
             correct = 1
