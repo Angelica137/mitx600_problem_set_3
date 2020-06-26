@@ -13,8 +13,3 @@ def getGuessedWord(secretWord, lettersGuessed):
             guessedSoFar.append('_')
     separator = ' '
     return separator.join(guessedSoFar)
-
-
-secretWord = 'durian'
-lettersGuessed = ['h', 'a', 'c', 'd', 'i', 'm']
-print(getGuessedWord(secretWord, lettersGuessed))
