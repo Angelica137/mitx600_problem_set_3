@@ -9,12 +9,13 @@
 
 import random
 
-WORDLIST_FILENAME = "words.txt"
+WORDLIST_FILENAME = "/Users/Angelica/Documents/Coding/ComputerScience/MIT_600/wk_3/mitx600_problem_set_3/scripts/words.txt"
+
 
 def loadWords():
     """
     Returns a list of valid words. Words are strings of lowercase letters.
-    
+
     Depending on the size of the word list, this function may
     take a while to finish.
     """
@@ -28,6 +29,7 @@ def loadWords():
     print("  ", len(wordlist), "words loaded.")
     return wordlist
 
+
 def chooseWord(wordlist):
     """
     wordlist (list): list of words (strings)
@@ -39,9 +41,11 @@ def chooseWord(wordlist):
 # end of helper code
 # -----------------------------------
 
+
 # Load the list of words into the variable wordlist
 # so that it can be accessed from anywhere in the program
 wordlist = loadWords()
+
 
 def isWordGuessed(secretWord, lettersGuessed):
     '''
@@ -51,7 +55,6 @@ def isWordGuessed(secretWord, lettersGuessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE...
-
 
 
 def getGuessedWord(secretWord, lettersGuessed):
@@ -64,7 +67,6 @@ def getGuessedWord(secretWord, lettersGuessed):
     # FILL IN YOUR CODE HERE...
 
 
-
 def getAvailableLetters(lettersGuessed):
     '''
     lettersGuessed: list, what letters have been guessed so far
@@ -72,7 +74,7 @@ def getAvailableLetters(lettersGuessed):
       yet been guessed.
     '''
     # FILL IN YOUR CODE HERE...
-    
+
 
 def hangman(secretWord):
     '''
@@ -95,10 +97,6 @@ def hangman(secretWord):
     Follows the other limitations detailed in the problem write-up.
     '''
     # FILL IN YOUR CODE HERE...
-
-
-
-
 
 
 # When you've completed your hangman function, uncomment these two lines
