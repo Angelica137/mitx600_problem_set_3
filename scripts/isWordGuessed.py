@@ -8,6 +8,14 @@ def isWordGuessed(secretWord, lettersGuessed):
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
     '''
-    separator = ','
-    joinLettersGuessed = separator.join(lettersGuessed)
-    return joinLettersGuessed is secretWord
+    correct = 0
+    for i in lettersGuessed:
+        if i in secretWord:
+            correct = 0
+        else:
+            correct = 1
+            break
+    if correct == 0:
+        return True
+    else:
+        return False

@@ -54,7 +54,17 @@ def isWordGuessed(secretWord, lettersGuessed):
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE...
+    correct = 0
+    for i in lettersGuessed:
+        if i in secretWord:
+            correct = 0
+        else:
+            correct = 1
+            break
+    if correct == 0:
+        return True
+    else:
+        return False
 
 
 def getGuessedWord(secretWord, lettersGuessed):
