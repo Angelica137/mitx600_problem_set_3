@@ -1,3 +1,6 @@
+# def joinLettersGuessed(lettersGuessed):
+
+
 def isWordGuessed(secretWord, lettersGuessed):
     '''
     secretWord: string, the word the user is guessing
@@ -5,4 +8,6 @@ def isWordGuessed(secretWord, lettersGuessed):
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE...
+    separator = ','
+    joinLettersGuessed = separator.join(lettersGuessed)
+    return joinLettersGuessed is secretWord

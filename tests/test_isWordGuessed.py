@@ -1,4 +1,4 @@
-from scripts.isWprdGuessed import isWordGuessed
+from scripts.isWordGuessed import isWordGuessed
 
 
 def test_word_is_guessed():
