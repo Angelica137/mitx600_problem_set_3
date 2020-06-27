@@ -127,3 +127,8 @@ And the output of a losing game should look like this...
     Oops! That letter is not in my word: e_ _ e
     -----------
     Sorry, you ran out of guesses. The word was else.
+
+## To do
+
+The problem set required submission without wrappers.
+Redesign the solution to use OOD
