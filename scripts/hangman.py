@@ -2,7 +2,7 @@ import string
 from getAvailableLetters import getAvailableLetters
 from getGuessedWord import getGuessedWord
 from welcomeMsg import welcomeMsg
-from gameRules import gameRules
+from isWordGuessed import isWordGuessed
 
 
 def hangman(secretWord):
@@ -26,31 +26,36 @@ def hangman(secretWord):
     Follows the other limitations detailed in the problem write-up.
     '''
     print(welcomeMsg(secretWord))
+    guess = getGuessedWord(secretWord, lettersGuessed)
     attemptsLeft = 8
     while attemptsLeft > 0:
         print('you have ' + str(attemptsLeft) +
-              ' gesses left\nAvailable letters: ' + getAvailableLetters(lettersGuessed))
+              ' guesses left\nAvailable letters: ' + getAvailableLetters(lettersGuessed))
         letter = input('Please guess a letter: ')
         letterLowerCase = letter.lower()
-        getGuessedWord(secretWord, lettersGuessed)
-        gameRules(letterLowerCase, lettersGuessed, secretWord, attemptsLeft)
-        attemptsLeft -= 1
-# print(getGuessedWord(secretWord, lettersGuessed))
-# is letterLowerCase in secret word
-# congrats message leave counter unchanged
-# if letter is not in secret word
-# sad message
-# change counter
-# if letter had already been changed
-# sad message
+        if letterLowerCase in lettersGuessed:
+            lettersGuessed.append(letterLowerCase)
+            print('Oops! You\'ve already guessed that letter: ' + guess)
+        elif letterLowerCase in secretWord:
+            lettersGuessed.append(letterLowerCase)
+            if isWordGuessed(secretWord, lettersGuessed) == True:
+                print(getGuessedWord(secretWord, lettersGuessed) + ' Good guess: ' + secretWord +
+                      '\n------------\nCongratulations, you won!')
+                break
+            else:
+                print('Good guess: ' + getGuessedWord(secretWord, lettersGuessed))
+        else:
+            lettersGuessed.append(letterLowerCase)
+            print('Oops! That letter is not in my word: ' +
+                  getGuessedWord(secretWord, lettersGuessed))
+            attemptsLeft -= 1
+        print('-------------')
 
 
 # count no of attempts
 # return available letters - get avail letters
 # ask them to guess a letter
 # reply
-
-
 secretWord = 'apple'
 lettersGuessed = []
 hangman(secretWord)

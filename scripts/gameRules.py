@@ -13,5 +13,5 @@ def gameRules(letterLowerCase, lettersGuessed, secretWord, attemptsLeft):
         lettersGuessed.append(letterLowerCase)
         print('Oops! That letter is not in my word: ' +
               getGuessedWord(secretWord, lettersGuessed))
-
+        attemptsLeft -= 1
     print('-------------')
