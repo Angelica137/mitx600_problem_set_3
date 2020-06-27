@@ -131,4 +131,4 @@ And the output of a losing game should look like this...
 ## To do
 
 The problem set required submission without wrappers.
-Redesign the solution to use OOD
+Redesign the solution to use TDD and OOD
