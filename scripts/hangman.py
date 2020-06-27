@@ -1,5 +1,5 @@
 import string
-from getAvailableLetters import getAvailableLetters
+from scripts.getAvailableLetters import getAvailableLetters
 
 
 def hangman(secretWord):
@@ -26,10 +26,26 @@ def hangman(secretWord):
     print('I am thinking of a word that is ' +
           str(len(secretWord)) + 'letters long.')
     counter = 0
+
+
+'''		
     while counter < 8:
         print('_ _ _ _ _ _ _ _')
-        counter += 1
+
         print('Available letters:' + getAvailableLetters(lettersGuessed))
+        letter = input('Please guess a letter: ')
+        letterLowerCase = letter.lower()
+        # if letter is in secret word
+        # replace dahsed by letter
+        # congrats message leave counter unchanged
+        # push letter to guessed letters array
+        # if letter is not in secret word
+        # sad message
+        # change counter
+        # if letter had already been changed
+        # sad message
+
+        counter += 1
     print(counter)
 # count no of attempts
 # return available letters - get avail letters
@@ -40,3 +56,4 @@ def hangman(secretWord):
 secretWord = 'apple'
 lettersGuessed = []
 hangman(secretWord)
+'''
