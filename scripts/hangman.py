@@ -25,8 +25,8 @@ def hangman(secretWord):
 
     Follows the other limitations detailed in the problem write-up.
     '''
+    lettersGuessed = []
     print(welcomeMsg(secretWord))
-    guess = getGuessedWord(secretWord, lettersGuessed)
     attemptsLeft = 8
     while attemptsLeft > 0:
         print('you have ' + str(attemptsLeft) +
@@ -35,11 +35,12 @@ def hangman(secretWord):
         letterLowerCase = letter.lower()
         if letterLowerCase in lettersGuessed:
             lettersGuessed.append(letterLowerCase)
-            print('Oops! You\'ve already guessed that letter: ' + guess)
+            print('Oops! You\'ve already guessed that letter: ' +
+                  getGuessedWord(secretWord, lettersGuessed))
         elif letterLowerCase in secretWord:
             lettersGuessed.append(letterLowerCase)
             if isWordGuessed(secretWord, lettersGuessed) == True:
-                print(getGuessedWord(secretWord, lettersGuessed) + ' Good guess: ' + secretWord +
+                print('Good guess: ' + secretWord +
                       '\n------------\nCongratulations, you won!')
                 break
             else:
@@ -51,11 +52,14 @@ def hangman(secretWord):
             attemptsLeft -= 1
         print('-------------')
 
+    if attemptsLeft == 0 and isWordGuessed(secretWord, lettersGuessed) == False:
+        print('Sorry, you ran out of guesses. The word was ' + secretWord + '.')
+
 
 # count no of attempts
 # return available letters - get avail letters
 # ask them to guess a letter
 # reply
-secretWord = 'apple'
+secretWord = 'c'
 lettersGuessed = []
 hangman(secretWord)

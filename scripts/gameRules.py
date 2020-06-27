@@ -1,4 +1,5 @@
 from getGuessedWord import getGuessedWord
+from isWordGuessed import isWordGuessed
 
 
 def gameRules(letterLowerCase, lettersGuessed, secretWord, attemptsLeft):
@@ -8,7 +9,12 @@ def gameRules(letterLowerCase, lettersGuessed, secretWord, attemptsLeft):
               getGuessedWord(secretWord, lettersGuessed))
     elif letterLowerCase in secretWord:
         lettersGuessed.append(letterLowerCase)
-        print('Good guess: ' + getGuessedWord(secretWord, lettersGuessed))
+        if isWordGuessed(secretWord, lettersGuessed) == True:
+            print(getGuessedWord(secretWord, lettersGuessed) + ' Good guess: ' + secretWord +
+                  '\n------------\nCongratulations, you won!')
+        # break
+        else:
+            print('Good guess: ' + getGuessedWord(secretWord, lettersGuessed))
     else:
         lettersGuessed.append(letterLowerCase)
         print('Oops! That letter is not in my word: ' +
